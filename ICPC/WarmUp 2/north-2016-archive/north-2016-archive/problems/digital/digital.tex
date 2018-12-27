@@ -1,0 +1,127 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACM ICPC 2016-2017, NEERC                                      %
+% Northern Subregional Contest                                   %
+% St Petersburg, October 22, 2016                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem D. Digital Addition                                    %
+%                                                                %
+% Original idea         Mikhail Dvorkin                          %
+% Problem statement     Mikhail Dvorkin                          %
+% Test set              Mikhail Dvorkin                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem statement                                              %
+%                                                                %
+% Author                Mikhail Dvorkin                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}{Digital Addition}{digital.in}{digital.out}{\timeLimit}
+
+% Original idea : Mikhail Dvorkin
+% Text          : Mikhail Dvorkin
+% Tests         : Mikhail Dvorkin
+
+Deidra is doing a columnar addition.
+She writes down two non-negative integer summands one below the other,
+left-pads them with zeroes so that they have equal length,
+and calculates the sum (e.~g. $77+05=82$). If the sum is longer than each of the summands
+(because of a carry, as in $96+07=103$) she appends a zero at the beginning of each summand
+($096+007=103$). She allows herself to use unnecessary leading zeroes ($007+004=011$)
+as soon as the length of all three numbers is the same.
+
+Also Deidra has a homemade printing press. She decided to print her addition
+without a plus or a horizontal line, using the following standard font:
+
+\begin{center}\includegraphics{pics/digital.1}\end{center}
+
+Unfortunately, she messed up with spacing, and all the digits were printed over each other
+in the following way.
+Digits that were supposed to be horizontally adjacent were printed so that
+the right two segments of the left digit coincide with the left two segments of the right digit.
+Digits that were supposed to be vertically adjacent were printed so that
+the bottom half (a square with 4 segments) of the upper digit coincides with the top half of the lower digit.
+
+\begin{center}
+\includegraphics{pics/digital.2}
+\end{center}
+
+When one or more black segments are printed at the same position, the result looks black.
+When only empty segments are printed at the position, the result looks white.
+
+Given the resulting picture, find a correct addition that could produce it or detect that there is none.
+
+\InputFile
+
+The first line of the input contains an integer $w$ ($1 \le w \le 100$)~---
+the width of Deidra's addition (number of digits in each line).
+
+The following 9 lines contain the description of the picture printed with the bad spacing.
+Each line contains $w$ or $w+1$ digits.
+\chr{1} denotes a black segment, \chr{0} denotes a white one. Even lines start with a space.
+See the examples for clarification.
+
+\OutputFile
+
+If there is no valid addition, output \txt{NO}.
+
+Otherwise output a valid addition that produces the given figure.
+The output should consist of three lines, each containing $w$ digits.
+
+If there are several solutions, output any of them.
+
+\Examples
+
+\begin{example}
+\exmp{
+2
+~1 1
+0 1 1
+~1 0
+0 1 1
+~1 1
+0 1 1
+~1 0
+0 1 1
+~0 0
+}{
+37
+34
+71
+}%
+\exmp{
+1
+~1
+0 1
+~1
+1 1
+~1
+1 1
+~1
+0 1
+~0
+}{
+2
+2
+4
+}%
+\exmp{
+1
+~1
+1 0
+~1
+1 1
+~1
+1 1
+~1
+0 1
+~0
+}{
+NO
+}%
+\end{example}
+
+The first example is illustrated above in the problem statement.
+
+In the second example an addition $7+0=7$ also produces the same picture.
+
+\end{problem}
+

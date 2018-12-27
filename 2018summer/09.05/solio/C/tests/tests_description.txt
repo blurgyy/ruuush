@@ -1,0 +1,25 @@
+D: Rita - Theo Age
+R: # of candles in Rita's box
+T: # of candles in Theo's box
+---
+File		D, R, T		Description
+candle01.in	1 7 0		Rita and Theo age = minimum (4, 3); T=0; Sol = 3
+candle02.in	2 26 8		Sample Input 1; Sol = 4
+candle03.in	2 22 12		Boxes ok; Sol = 0
+candle04.in	1 952 0		Limit case: sum of boxes = max && T=0; Rita and Theo w max age; min age diff;  Sol = 462
+candle05.in	1 690 452	Limit case: sum of boxes = max && T=452; Rita and Theo w max age; min age diff;  Sol = 200
+candle06.in	1 490 462	Limit case: sum of boxes = max && T=462 (boxes ok); Rita and Theo w max age; min age diff;  Sol = 0
+candle07.in	5 126 40	Random case, R!=0 && T !=0, Sol=12
+candle08.in	20 126 40	Boxes ok, max D; R!=0 && T !=0, Sol=0
+candle09.in	20 553 0	max D; T=0, Sol=63
+candle10.in	20 495 58	max D; R!=0 && T!=0, Sol=5
+candle11.in	5 119 47	random case; R!=0 && T!=0, Sol=5
+candle12.in	12 114 3	boxes ok; D=12; R!=0 && T!=0, Sol=0
+candle13.in	12 116 1	D=12; R!=0 && T!=0, Sol=1 (variant of candle12.in, with boxes not ok)
+candle14.in	12 117 0	D=12; R!=0 && T=0, Sol=3 (variant of candle12.in, with boxes not ok)
+
+
+
+
+	
+

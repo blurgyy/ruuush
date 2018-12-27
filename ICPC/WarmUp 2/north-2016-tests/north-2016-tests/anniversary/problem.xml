@@ -1,0 +1,36 @@
+<!--================================================================-->
+<!-- ACM ICPC 2016-2017, NEERC                                      -->
+<!-- Northern Subregional Contest                                   -->
+<!-- St Petersburg, October 22, 2016                                -->
+<!--================================================================-->
+<!-- Problem A. Anniversary Cake                                    -->
+<!--                                                                -->
+<!-- Original idea         Niyaz Nigmatullin                        -->
+<!-- Problem statement     Dmitry Shtukenberg                       -->
+<!-- Test set              Niyaz Nigmatullin                        -->
+<!--================================================================-->
+
+
+<problem
+    id      = "qf.2016.main.anniversary"
+    version = "1.0"
+>
+    <judging>
+        <script type = "%icpc">
+            <testset
+                test-count   = "36"
+                input-href   = "tests/##"
+                answer-href  = "tests/##.a"
+                input-name   = "anniversary.in"
+                output-name  = "anniversary.out"
+                time-limit   = "2s"
+                memory-limit = "268435456"
+            />
+            <verifier type = "%testlib">
+                <binary executable-id = "x86.exe.win32" file = "Check.exe"/>
+            </verifier>
+            
+        </script>
+    </judging>
+</problem>
+

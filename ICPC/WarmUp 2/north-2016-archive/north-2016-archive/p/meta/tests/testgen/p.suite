@@ -1,0 +1,5 @@
+Test generators test
+tests_root  Tests.java test generator
+files       No test generators
+doall       tests/doall.java test generator
+doxx        do02 test generator

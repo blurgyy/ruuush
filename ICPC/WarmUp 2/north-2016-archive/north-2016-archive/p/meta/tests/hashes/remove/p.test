@@ -1,0 +1,2 @@
+command=b
+result=BUILD FAILED FOR PROBLEM "remove": Test file "tests/02" missing

@@ -1,0 +1,111 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACM ICPC 2016-2017, NEERC                                      %
+% Northern Subregional Contest                                   %
+% St Petersburg, October 22, 2016                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem E. Easy Reading                                        %
+%                                                                %
+% Original idea         Dmitry Shtukenberg                       %
+% Problem statement     Boris Minaev                             %
+% Test set              Boris Minaev                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem statement                                              %
+%                                                                %
+% Author                Boris Minaev                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}{Easy Reading}{easy.in}{easy.out}{\timeLimit}
+
+% Original idea : Dmitry Shtukenberg
+% Text          : Borys Minaiev
+% Tests         : Borys Minaiev
+
+Eugene is reading a boring book. To make this process interesting he
+is drawing a picture at the same time. He has a piece of graph paper that is divided
+into square cells. All the cells are empty at the beginning.
+
+Eugene starts by painting over one cell. Then he opens the book at a random
+page and starts reading. Whenever he sees the letter \chr{u} in the text, he moves his
+pen one cell up and then paints over the cell under his pen. Whenever he sees
+the letter \chr{d}, he does the same but moves his pen one cell down instead of up. For
+letters \chr{l} and \chr{r} he moves to the left and to the right, respectively. If he wants to
+paint a cell that was already painted, he paints it again.
+
+You have found a piece of paper and the text of the book. 
+Now you want to understand if the picture on the paper could be drawn by 
+Eugene at some point of his book reading.
+Remember that Eugene could use some substring of the text.
+
+\InputFile
+
+The first line of the input contains an integer $l$~--- the length of the text
+($1 \le l \le 100\,000$).
+The second line contains a string of length $l$~--- the text.
+It contains only lowercase English letters, spaces, commas and periods.
+The text neither begins nor ends with a space.
+
+The third line contains two positive integers $n$ and $m$~--- the picture dimensions
+($2 \le n \times m \le 100\,000$).
+
+Each of the following $n$ lines contains a string of length $m$. Painted cells
+are denoted by \chr{X}, while empty cells~--- by \chr{.}.
+It is guaranteed that there are at least two painted cells in the picture.
+
+The first of these $n$ lines corresponds to the top of the picture and the last one
+corresponds to the bottom of it.
+
+\OutputFile
+
+If the picture could be painted by Eugene, output \txt{YES} on the first line. 
+On the second line print two integers $b$ and $e$
+such that if Eugene read all letters from $b$ to $e$, inclusive, he would draw
+exactly the same picture as described in the input ($1 \le b \le e \le l$).
+If there are several solutions, output any of them.
+
+If the picture couldn't be drawn by Eugene, output \txt{NO}.
+
+\Examples
+
+\exmpwidinf=0.53\thelinewidth
+\exmpwidouf=0.42\thelinewidth
+
+\begin{example}
+\exmp{
+43
+you should read statement really carefully.
+3 6
+...XX.
+..XXX.
+...XXX
+}{
+YES
+3 42
+}%
+\exmp{
+43
+you should read statement really carefully.
+3 2
+XX
+XX
+XX
+}{
+NO
+}%
+%\exmp{
+%43
+%you should read statement really carefully.
+%3 2
+%XX
+%XX
+%.X
+%}{
+%YES
+%3 10
+%}%
+\end{example}
+
+\exmpwidinf=0.475\thelinewidth
+\exmpwidouf=0.475\thelinewidth
+
+\end{problem}
+

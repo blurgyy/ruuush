@@ -1,0 +1,69 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACM ICPC 2016-2017, NEERC                                      %
+% Northern Subregional Contest                                   %
+% St Petersburg, October 22, 2016                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem A. Anniversary Cake                                    %
+%                                                                %
+% Original idea         Niyaz Nigmatullin                        %
+% Problem statement     Dmitry Shtukenberg                       %
+% Test set              Niyaz Nigmatullin                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem statement                                              %
+%                                                                %
+% Author                Dmitry Shtukenberg                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}{Anniversary Cake}{anniversary.in}{anniversary.out}{\timeLimit}
+
+% Original idea : Niyaz Nigmatullin
+% Text          : Dmitry Shtukenberg
+% Tests         : Niyaz Nigmatullin
+
+Two students, Adam and Anton, are celebrating two-year anniversary of not passing
+their Math Logic exam. After very careful search in a local supermarket,
+they bought a rectangular cake with integer dimensions and two candles.
+
+Later in the campus Adam put the candles into different integer points of the cake
+and gave a knife to Anton to cut the cake.
+The cut should start and end at integer points at the edges of the cake, and
+it should not touch the candles. 
+Also each piece should have exactly one candle at it.
+Please, help Anton to find the starting and ending points of the cut.
+
+\begin{center}
+\begin{tabular}[c]{c}
+  \includegraphics{pics/anniversary.1} \\
+  A $7 \times 3$ cake and two candles at $(2, 2)$ and $(3, 2)$. \\
+  Anton can cut this cake through $(0, 0)$ and $(4, 3)$.
+\end{tabular}
+\end{center}
+
+\InputFile
+
+The single line of the input contains six integers: 
+    $w$, $h$~--- cake dimensions;
+    $a_x$, $a_y$~--- $x$ and $y$ coordinates of the first candle;
+    $b_x$, $b_y$~--- the coordinates of the second candle
+($3 \le w, h \le 10^9$; $0 < a_x, b_x < w; 0 < a_y, b_y < h$; $a_x \ne b_x$ or $a_y \ne b_y$).
+
+\OutputFile
+
+Output four integers $s_x$, $s_y$, $e_x$, and $e_y$~---
+the starting and ending coordinates of the cut.
+Both starting and ending point of the cut should belong to the sides of the cake.
+
+If there are several solutions, output any of them.
+
+\Example
+
+\begin{example}
+\exmp{
+7 3 2 2 3 2
+}{
+0 0 4 3
+}%
+\end{example}
+
+\end{problem}
+

@@ -1,0 +1,36 @@
+ # |  A |  B |  N | Description
+------------------------------------------------------
+01 |  3 |  5 |  9 | Sample input
+02 |  4 |  5 |  0 | Empty Dictionary
+03 |  3 |  5 |  1 | Only one single letter to avoid
+04 |  4 |  5 | 10 | Several single letters to avoid
+05 |  3 |  4 | 26 | All letters to avoid (answer is 0)
+06 |  3 |  5 |  8 | Several different words (some start with letters that end other words)
+07 |  3 |  5 | 10 | Words that start with prefixes of suffixes other words
+08 |  3 |  5 | 12 | Words that have others words as substrings
+09 |  4 |  6 | 50 | (small alphabet, many overlaps)
+10 |  3 |  6 | 50 | (big alphabet, almost no overlap)
+................................ Limit for what I tested with brute force approach
+11 |  3 | 10 | 25 | Smallish alphabet (5 letters)
+12 |  3 | 15 | 35 | Medium alphabet (10 letters)
+13 | 10 | 15 | 45 | Medium A (A=10)
+14 | 18 | 18 | 50 | Case with A==B
+15 |  4 | 19 | 50 | Close to max (A=min+1, B=max-1)
+16 |  3 | 20 |  0 | Max pwd size with empty dictionary
+17 |  3 | 20 | 50 | Max pwd size and medium-long words
+18 |  3 | 20 | 50 | Max time (max pwd size, max words, all maximum length, max alphabet)
+
+-------------------------------------------------
+
+Random generated tests:
+
+./generate  4  6 50  2  1  6 > passwords09.in
+./generate  3  6 50 26  1  6 > passwords10.in
+./generate  3 10 25  5  1 10 > passwords11.in
+./generate  3 15 35 10  3 15 > passwords12.in
+./generate 10 15 45  4  1 15 > passwords13.in
+./generate 18 18 50  3  3 18 > passwords14.in
+./generate  4 19 50 15  1 19 > passwords15.in
+./generate  3 20  0  1  1  1 > passwords16.in
+./generate  3 20 50 10 10 20 > passwords17.in
+./generate  3 20 50 26 20 20 > passwords18.in

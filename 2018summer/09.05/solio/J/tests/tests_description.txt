@@ -1,0 +1,20 @@
+Nome          |  Descrição
+----------------------------------------------------------------------
+lottery.in01  |  3 1
+lottery.in02  |  3 2
+lottery.in03  |  3 3
+lottery.in04  |  3 4
+lottery.in05  |  4 1
+lottery.in06  |  4 2
+lottery.in07  |  4 3
+lottery.in08  |  4 4
+lottery.in09  |  4 5
+lottery.in10  |  5 4
+lottery.in11  |  5 5
+lottery.in12  |  5 6
+lottery.in13  |  6 5
+lottery.in14  |  6 6
+lottery.in15  |  6 7
+lottery.in16  |  7 7
+lottery.in17  |  7 8
+

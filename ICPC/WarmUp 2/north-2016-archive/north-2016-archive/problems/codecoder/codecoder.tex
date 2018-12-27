@@ -1,0 +1,74 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACM ICPC 2016-2017, NEERC                                      %
+% Northern Subregional Contest                                   %
+% St Petersburg, October 22, 2016                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem C. CodeCoder vs TopForces                              %
+%                                                                %
+% Original idea         Egor Kulikov                             %
+% Problem statement     Egor Kulikov                             %
+% Test set              Egor Kulikov                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem statement                                              %
+%                                                                %
+% Author                Egor Kulikov                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}{CodeCoder vs TopForces}{codecoder.in}{codecoder.out}{\timeLimit}
+
+% Original idea : Egor Kulikov
+% Text          : Egor Kulikov
+% Tests         : Egor Kulikov
+
+Competitive programming is very popular in Byteland. 
+In fact, every Bytelandian citizen is registered at two programming sites~---
+CodeCoder and TopForces. 
+Each site maintains its own proprietary rating system. 
+Each citizen has a unique integer rating at each site that approximates their skill.
+Greater rating corresponds to better skill.
+
+People of Byteland are naturally optimistic. 
+Citizen $A$ thinks that he has a chance to beat citizen $B$ in a programming competition
+if there exists a sequence of Bytelandian citizens $A = P_0, P_1, \ldots, P_k = B$
+for some $k \geq 1$ such that for each $i$ ($0 \leq i < k$), $P_i$ has higher rating
+than $P_{i + 1}$ at one or both sites.
+
+Each Bytelandian citizen wants to know how many other citizens they can possibly beat 
+in a programming competition.
+
+\InputFile
+
+The first line of the input contains an integer $n$~--- the number of
+citizens ($1 \leq n \leq 100\,000$).
+The following $n$ lines contain information about ratings. The $i$-th of them
+contains two integers $CC_i$ and $TF_i$~--- ratings of the $i$-th 
+citizen at CodeCoder and TopForces
+($1 \leq CC_i, TF_i \leq 10^6$).
+All the ratings at each site are distinct.
+
+\OutputFile
+
+For each citizen $i$ output an integer $b_i$~---
+how many other citizens they can possibly beat in a programming competition.
+Each $b_i$ should be printed in a separate line, in the order
+the citizens are given in the input.
+
+\Example
+
+\begin{example}
+\exmp{
+4
+2 3
+3 2
+1 1
+4 5
+}{
+2
+2
+0
+3
+}%
+\end{example}
+
+\end{problem}
+

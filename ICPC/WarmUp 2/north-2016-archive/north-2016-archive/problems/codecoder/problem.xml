@@ -1,0 +1,36 @@
+<!--================================================================-->
+<!-- ACM ICPC 2016-2017, NEERC                                      -->
+<!-- Northern Subregional Contest                                   -->
+<!-- St Petersburg, October 22, 2016                                -->
+<!--================================================================-->
+<!-- Problem C. CodeCoder vs TopForces                              -->
+<!--                                                                -->
+<!-- Original idea         Egor Kulikov                             -->
+<!-- Problem statement     Egor Kulikov                             -->
+<!-- Test set              Egor Kulikov                             -->
+<!--================================================================-->
+
+
+<problem
+    id      = "qf.2016.main.codecoder"
+    version = "1.0"
+>
+    <judging>
+        <script type = "%icpc">
+            <testset
+                test-count   = "47"
+                input-href   = "tests/##"
+                answer-href  = "tests/##.a"
+                input-name   = "codecoder.in"
+                output-name  = "codecoder.out"
+                time-limit   = "2s"
+                memory-limit = "268435456"
+            />
+            <verifier type = "%testlib">
+                <binary executable-id = "java.check" file = "Check.jar"/>
+            </verifier>
+            
+        </script>
+    </judging>
+</problem>
+

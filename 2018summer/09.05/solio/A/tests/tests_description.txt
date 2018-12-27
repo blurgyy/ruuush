@@ -1,0 +1,23 @@
+# Nome           #              # N   # Quadrant # Possible  # Description
+#####################################################################################
+# armsreach.in01 # sample_01.in #  3  #   Q1     #    Y      # Sample used in problem description, it is possible to reach anywhere in the range [0, sum(segments)].
+# armsreach.in02 # sample_02.in #  3  #   Q3     #    N      # Sample used in problem description to show to reach to the closest possible point
+# armsreach.in03 # asp01.in     #  1  # +x axis  #    Y      # test with 1 segment that can reach the point.
+# armsreach.in04 # asp02.in     #  1  # origin   #    N      # test with 1 segment that tries to reach (0, 0).
+# armsreach.in05 # asp03.in     #  2  #   Q1     #    N      # test with 2 segments that tries to reach in a inner region that is not reachable. Radius reach is [5, 15].
+# armsreach.in06 # asp04.in     #  3  #   Q1     #    Y      # test with 4 segments that has a inner region not reachable but the target is reachable.
+# armsreach.in07 # asp05.in     #  3  #   Q1     #    Y      # test with 3 segments that when inscribed in a circumference the center is outside the polygon.
+# armsreach.in08 # asp06.in     #  3  #   Q3     #    Y      # test with 3 segments that is not solvable if one tries to make a arm with a single "joint".
+# armsreach.in09 # asp07.in     # 11  #   Q3     #    N      # All segments except the largest need to point in the same direction.
+# armsreach.in10 # asp08.in     # 20  #   Q4     #    Y      # test with 20 segments not possible to solve with a single "joint".
+# armsreach.in11 # asp09.in     # 20  #   Q4     #    Y      # test with 20 segments of prime length reaching prime coordinates.
+# armsreach.in12 # asp10.in     # 20  # origin   #    Y      # test with 20 random segments that reachs to (0, 0).
+# armsreach.in13 # asp11.in     # 20  # -y axis  #    N      # test with same 20 random segments that tries to reach to (0, -20000).
+# armsreach.in14 #              # 20  #   Q2     #    Y      # random with gen1()
+# armsreach.in15 #              # 20  #   Q3     #    Y      # random with gen1()
+# armsreach.in16 #              #  4  #   Q2     #    N      # random
+# armsreach.in17 #              # 20  #   Q2     #    N      # random
+# armsreach.in18 #              # 20  #   Q1     #    Y      # random
+# armsreach.in19 #              #  6  #   Q4     #    Y      # random
+# armsreach.in20 #              #  6  #   Q3     #    N      # random
+# armsreach.in21 #              #  1  #   Q2     #    N      # 1 segment can't reach (pdr solution failed this case).

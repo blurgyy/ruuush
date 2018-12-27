@@ -1,0 +1,79 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACM ICPC 2016-2017, NEERC                                      %
+% Northern Subregional Contest                                   %
+% St Petersburg, October 22, 2016                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem F. Folding                                             %
+%                                                                %
+% Original idea         Georgiy Korneev                          %
+% Problem statement     Georgiy Korneev                          %
+% Test set              Georgiy Korneev                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem statement                                              %
+%                                                                %
+% Author                Georgiy Korneev                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}{Folding}{folding.in}{folding.out}{\timeLimit}
+
+% Original idea : Georgiy Korneev
+% Text          : Georgiy Korneev
+% Tests         : Georgiy Korneev
+
+As you can remember, Alex is fond of origami. She switched from squares
+to rectangles, and rectangles are much more difficult to master.
+Her main interest is to determine what is the minimum possible number of
+folds required to transform $W \times H$ rectangle to $w \times h$ one.
+The result of each fold should also be rectangular, so it is only allowed to
+make folds that are parallel to the sides of the rectangle.
+
+Help Alex and write a program that determines the minimum required number of folds.
+
+\InputFile
+
+The first line of the input contains two integers $W$ and $H$~---
+the initial rectangle dimensions.  
+The second line contains two more integers $w$ and $h$~---
+the target rectangle dimensions ($1 \le W, H, w, h \le 10^9$).
+
+\OutputFile
+
+Output a single integer~--- the minimum required number of folds
+to transform the initial rectangle to the target one.
+
+If the required transformation is not possible, output $-1$.
+
+\Examples
+
+\begin{example}
+\exmp{
+2 7
+2 2
+}{
+2
+}%
+\exmp{
+10 6
+4 8
+}{
+2
+}%
+\exmp{
+5 5
+1 6
+}{
+-1
+}%
+\end{example}
+
+In the first example you should fold $2\times7$ rectangle to $2\times4$, 
+and then to $2\times2$.
+
+In the second example you should fold $10\times6$ rectangle to $10\times4$, 
+then to $8\times4$, and rotate it to $4\times8$.
+
+In the third example it is impossible to fold $5\times5$ rectangle to $1\times6$ one
+(remember that folds must be parallel to the rectangle sides).
+
+\end{problem}
+

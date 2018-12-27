@@ -1,0 +1,21 @@
+40 valid 3 4
+41 valid 438 102
+42 valid 500 600
+43 valid 299993 1
+44 valid 7 19521
+45 valid 2 19
+46 valid 57 5218
+47 valid 12 21938
+48 valid 78293 3
+49 valid 78 78
+50 zig-zag
+51 overflow
+52 frame 1
+53 frame 2
+60 torus 2 2
+61 torus 300 1000
+62 torus 3 98765
+70 chaos 10
+71 chaos 75
+72 chaos 1234
+73 chaos 300000

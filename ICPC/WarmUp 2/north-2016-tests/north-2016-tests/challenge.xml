@@ -1,0 +1,22 @@
+
+<challenge
+    id              = "qf-2016.main"
+    name            = "ACM ICPC 2016-2017, NEERC, Northern Subregional Contest"
+    scoring-model   = "%icpc"
+    length          = "5h"
+
+    problem-id      = "qf.2016.main"
+    xmlai-process   = "http://neerc.ifmo.ru/develop/pcms2/xmlai/default-rules.xml"
+>
+    <problem-ref id = "a" alias = "A" problem-id = "anniversary" name = "Anniversary Cake"/>
+    <problem-ref id = "b" alias = "B" problem-id = "boysgirls" name = "Boys and Girls"/>
+    <problem-ref id = "c" alias = "C" problem-id = "codecoder" name = "CodeCoder vs TopForces"/>
+    <problem-ref id = "d" alias = "D" problem-id = "digital" name = "Digital Addition"/>
+    <problem-ref id = "e" alias = "E" problem-id = "easy" name = "Easy Reading"/>
+    <problem-ref id = "f" alias = "F" problem-id = "folding" name = "Folding"/>
+    <problem-ref id = "g" alias = "G" problem-id = "gangsters" name = "Gangsters in Central City"/>
+    <problem-ref id = "h" alias = "H" problem-id = "hard" name = "Hard Cuts"/>
+    <problem-ref id = "i" alias = "I" problem-id = "integral" name = "Integral Polygons"/>
+    <problem-ref id = "j" alias = "J" problem-id = "java2016" name = "Java2016"/>
+    <problem-ref id = "k" alias = "K" problem-id = "king" name = "King's Heir"/>
+</challenge>

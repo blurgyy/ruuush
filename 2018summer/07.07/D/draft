@@ -1,0 +1,7 @@
+dp[2][i]        ///dp[0][i] 在第i层不停靠
+                ///dp[1][i] 在第i层停靠
+
+dp[0][i] = sum(s[0] to s[i]);
+dp[1][i] = sum(s[i+1] to s[n]);
+///Nope
+

@@ -1,0 +1,97 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACM ICPC 2016-2017, NEERC                                      %
+% Northern Subregional Contest                                   %
+% St Petersburg, October 22, 2016                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem J. Java2016                                            %
+%                                                                %
+% Original idea         Georgiy Korneev                          %
+% Problem statement     Georgiy Korneev                          %
+% Test set              Georgiy Korneev                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem statement                                              %
+%                                                                %
+% Author                Georgiy Korneev                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}{Java2016}{java2016.in}{java2016.out}{\timeLimit}
+
+% Original idea : Georgiy Korneev
+% Text          : Georgiy Korneev
+% Tests         : Georgiy Korneev
+
+John likes to learn esoteric programming languages.
+Recently he discovered the probabilistic programming language Java2K.
+Built-in functions of Java2K have only a certain probability 
+to do whatever you intend them to do.
+
+The Java2K programming is very hard, so John designed a much simpler
+language for training: Java2016. Built-in operators of Java2016 are
+deterministic, while their operands are random. 
+Each value in Java2016 is a positive integer in the range $0..255$, inclusive.
+
+Java2016 supports six operators of three precedencies:
+\vspace{-0.8ex}\begin{bnf}\begin{eqnarray*}
+<expression>&::=& <expression> \chr{min} <sum> | <expression> \chr{max} <sum> | <sum>\\
+<sum>       &::=& <sum> \chr{+} <term> | <sum> \chr{-} <term> | <term> \\
+<term>      &::=& <term> \chr{*} <factor> | <term> \chr{/} <factor> | <factor> \\
+<factor>    &::=& \chr{(} <expression> \chr{)} | \chr{?} | <macro>
+\end{eqnarray*}\end{bnf}\vspace{-2em}
+
+Minimum (\chr{min}) and maximum (\chr{max}) operators are defined as usual.
+Addition (\chr{+}), subtraction (\chr{-}) and multiplication (\chr{*}) are
+defined modulo 256.
+The result of the division (\chr{/}) is rounded towards zero.
+If the divider is zero, the program crashes.
+The argument of the operator is a result of another operator,
+evenly distributed random value (\chr{?}), or macro substitution.
+
+For instance, the probability that \txt{?/?/?} is evaluated to zero is $98.2\%$,
+while the probability of the crash~is~$0.8\%$.
+
+The Java2016 program consists of zero or more macro definitions, followed
+by the resulting expression. Each macro definition has a form of 
+\vspace{-0.8ex}\begin{bnf}\begin{eqnarray*}
+<macrodef>  &::=& <macro> \chr{=} <expression> \\
+<macro>     &::=& \chr{a} \dots \chr{z}
+\end{eqnarray*}\end{bnf}\vspace{-2em}
+
+The macro should be defined before the first use. It may not be redefined.
+The macro is expanded to its definition on each use. For instance,
+\\\verb|    a = ?  max ?|
+\\\verb|    (a max a) / a|
+\\is expanded to \txt{((?~~max~?)~max~(?~~max~?))~/~(?~~max~?)}.
+
+John is going to add probabilistic constants to Java2016, so for each
+possible constant value he needs a program that successfully
+evaluates to this value with at least one-half probability.
+Crashes are counted toward failures. 
+
+\InputFile
+
+The input contains a single integer $c$~--- the target constant
+($0 \le c \le 255$).  
+
+\OutputFile
+
+Output a Java2016 program that successfully evaluates to constant $c$ with probability
+no less than $1/2$. The total length of the program should not exceed 
+$256$ characters (excluding spaces).
+
+\Examples
+
+\begin{example}
+\exmp{
+0
+}{
+? /?/ ?
+}%
+\exmp{
+1
+}{
+a = ?  max ?
+(a max a) / a
+}%
+\end{example}%
+\end{problem}
+

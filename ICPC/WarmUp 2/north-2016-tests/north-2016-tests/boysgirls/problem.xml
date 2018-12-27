@@ -1,0 +1,36 @@
+<!--================================================================-->
+<!-- ACM ICPC 2016-2017, NEERC                                      -->
+<!-- Northern Subregional Contest                                   -->
+<!-- St Petersburg, October 22, 2016                                -->
+<!--================================================================-->
+<!-- Problem B. Boys and Girls                                      -->
+<!--                                                                -->
+<!-- Original idea         Pavel Mavrin                             -->
+<!-- Problem statement     Pavel Mavrin                             -->
+<!-- Test set              Pavel Mavrin                             -->
+<!--================================================================-->
+
+
+<problem
+    id      = "qf.2016.main.boysgirls"
+    version = "1.0"
+>
+    <judging>
+        <script type = "%icpc">
+            <testset
+                test-count   = "155"
+                input-href   = "tests/###"
+                answer-href  = "tests/###.a"
+                input-name   = "boysgirls.in"
+                output-name  = "boysgirls.out"
+                time-limit   = "2s"
+                memory-limit = "268435456"
+            />
+            <verifier type = "%testlib">
+                <binary executable-id = "java.check" file = "Check.jar"/>
+            </verifier>
+            
+        </script>
+    </judging>
+</problem>
+

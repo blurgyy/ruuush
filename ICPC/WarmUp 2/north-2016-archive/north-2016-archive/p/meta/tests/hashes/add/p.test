@@ -1,0 +1,2 @@
+command=b
+result=BUILD FAILED FOR PROBLEM "add": New test file found "tests/03"

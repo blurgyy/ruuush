@@ -1,0 +1,12 @@
+hdu
+	2962
+	2243(AC_Automation)
+poj
+	//2528(segTree)
+	3667(segTree)
+	2778(AC_Automaton)
+	1625(AC_Automaton)
+	//2796
+CodeForces
+	865C
+	865D

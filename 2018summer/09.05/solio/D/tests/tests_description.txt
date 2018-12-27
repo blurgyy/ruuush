@@ -1,0 +1,22 @@
+test  N   D   K   Common  Comment
+1     2   1   1   0       sample 1
+2     1   1   1   1       base cases
+3     2   1   1   1       base cases
+4     5   2   2   1
+5     5   2   3   2       K > N/2
+6     10  3   5   0
+7     10  4   8   6       K > N/2
+8     10  4   8   7       K > N/2
+9     10  7   9   8       K > N/2
+10    10  10  10  10
+11    11  10  1   1       lowest output > 1
+12    10  9   2   1
+13    16  10  10  4
+14    17  10  10  3       most runtime para versão recursiva
+15    30  5   10  1       sample 2
+16    50  1   10  0       close to max iterations 
+17    50  1   10  1       max iterations
+18    49  10  10  10
+19    50  10  10  2       max constraints
+20    50  10  10  0       max constraints
+21    50  10  10  5       max constraints
