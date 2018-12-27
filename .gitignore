@@ -35,10 +35,13 @@
 *.in
 *.out
 *.ans
+*.a
 *.desc
 
 # ???
 *.mp4
 *.save-failed
 *.zip
-
+*.7z
+*.png
+*.jpg
