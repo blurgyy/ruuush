@@ -1,0 +1,37 @@
+#!/bin/bash
+
+SOL="sol"
+COMP="exkmp"
+
+# Compile solution
+if ! test -e exe/$SOL
+then
+	g++ src/$SOL.cpp -o exe/$SOL
+	echo -e "src/$SOL.cpp compiled"
+fi
+if ! test -e exe/$COMP
+then
+	g++ src/$COMP.cpp -o exe/$COMP
+	echo -e "src/$COMP.cpp compiled"
+fi
+
+# Generate input data
+cd exe
+./datagen > ../data/in.in
+echo -e "Input data generated\n"
+
+# Run the program
+cd ../data/
+echo "Running..."
+time ../exe/$SOL < in.in > $SOL.out
+time ../exe/$COMP < in.in > $COMP.out
+# cnt=1
+# while diff $SOL.out $COMP.out
+# do
+# 	../exe/datagen > in.in
+# 	time ../exe/$SOL < in.in > $SOL.out
+# 	time ../exe/$COMP < in.in > $COMP.out
+# 	echo $cnt
+# 	cnt=$[$cnt+1]
+# done
+echo -e "\nProgram finished\n"

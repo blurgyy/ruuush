@@ -1,0 +1,48 @@
+#!/usr/bin/python
+#coding: utf-8
+
+import time
+import random
+from random import randint
+
+glb_alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+def smaller_alphabet():
+	alphabet = ""
+	sigma = randint(2, 4);
+	for i in range(sigma):
+		alphabet += random.choice(glb_alphabet);
+	return alphabet;
+def smaller_sigma(alphabet):
+	ret = "";
+	sigma = randint(1, 3);
+	for i in range(sigma):
+		ret += random.choice(alphabet);
+	return ret;
+def output_string(choices):
+	ret = "";
+	length = randint(20000, 100000);
+	for i in range(length):
+		ret += random.choice(choices);
+	return ret;
+
+if(__name__ == "__main__"):
+	T = 10;
+	print(T);
+	output = [];
+	for i in range(T):
+		alphabet = smaller_alphabet();
+		choices = smaller_sigma(alphabet);
+		a = output_string(choices);
+		time.sleep(0.01);
+		choices = smaller_sigma(alphabet);
+		b = output_string(choices);
+		with open("rec", 'w') as f:
+			f.write("%d %d\n" % (len(a), len(b)));
+		# print("%s\n%s" % (a, b));
+		output.append([a, b]);
+		# print();
+	random.shuffle(output);
+	for i in output:
+		print("%s\n%s" % (i[0], i[1]));
+		print();

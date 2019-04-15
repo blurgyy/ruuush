@@ -1,0 +1,26 @@
+#!/bin/bash
+
+COM="sol2";
+ANO="sol";
+
+if ! test -e exe/$COM
+then
+	g++ src/$COM.cpp -o exe/$COM
+	echo -e "compiled"
+fi
+if ! test -e exe/$ANO
+then
+	g++ src/$ANO.cpp -o exe/$ANO
+	echo -e "compiled"
+fi
+
+cd exe/
+./datagen > ../data/in.in
+echo -e "input"
+
+cd ../
+exe/$COM < data/in.in > data/$COM.out
+exe/$ANO < data/in.in > data/$ANO.out
+echo "diff:"
+diff data/$COM.out data/$ANO.out
+echo -e "finished"

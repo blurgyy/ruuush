@@ -1,0 +1,8 @@
+#!/usr/bin/python
+
+import random
+
+T = 100
+print(T);
+for i in range(T):
+	print(random.randint(1, 100000));

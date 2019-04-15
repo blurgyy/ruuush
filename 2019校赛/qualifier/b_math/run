@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if ! test exe/datagen
+then
+	g++ src/datagen.cpp -o exe/datagen
+	echo -e "compiled datagen.cpp"
+fi
+
+exe/datagen > data/in.in
+echo -e "input data generated"

@@ -1,0 +1,98 @@
+#!/usr/bin/python
+#coding: utf-8
+
+import time
+import random
+from random import randint
+
+glb_alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+def smaller_alphabet():
+	alphabet = ""
+	sigma = randint(2, 4);
+	for i in range(sigma):
+		alphabet += random.choice(glb_alphabet);
+	return alphabet;
+def smaller_sigma(alphabet):
+	ret = "";
+	sigma = randint(1, 3);
+	for i in range(sigma):
+		ret += random.choice(alphabet);
+	return ret;
+def output_string(choices):
+	ret = "";
+	length = randint(20000, 100000);
+	for i in range(length):
+		ret += random.choice(choices);
+	return ret;
+def allthesame():
+	lena = randint(10000, 100000);
+	lenb = randint(10000, 100000);
+	a = "";
+	b = "";
+	ch = random.choice(glb_alphabet);
+	for i in range(lena):
+		a += ch;
+	for i in range(lenb):
+		b += ch;
+	return [a, b];
+def ahalf_bsame():
+	lena = randint(10000, 100000);
+	lenb = randint(10000, 100000);
+	a = "";
+	b = "";
+	ch = random.choice(glb_alphabet);
+	ar = ch;
+	a_half = randint(int(lena/2), lena);
+	while(ar == ch):
+		ar = random.choice(glb_alphabet);
+	for i in range(lena):
+		if(i < a_half):
+			a += ch;
+		else:
+			a += ar;
+	for i in range(lenb):
+		b += ch;
+	return [a, b];
+def totally_random():
+	lena = randint(10000, 100000);
+	lenb = randint(10000, 100000);
+	a = "";
+	b = "";
+	for i in range(lena):
+		a += random.choice(glb_alphabet);
+	for i in range(lenb):
+		b += random.choice(glb_alphabet);
+	return [a, b];
+def previously():
+	alphabet = smaller_alphabet();
+	choices = smaller_sigma(alphabet);
+	a = output_string(choices);
+	choices = smaller_sigma(alphabet);
+	b = output_string(choices);
+	# print("%s\n%s" % (a, b));
+	return [a, b];
+
+if(__name__ == "__main__"):
+	T = 10;
+	print(T);
+	output = [];
+	with open("rec", 'w') as f:
+		f.write("");
+	for i in range(T):
+		# output.append(previously());
+		if(i == 0):
+			output.append(allthesame());
+		elif(i == 1):
+			output.append(ahalf_bsame());
+		elif(i == 2):
+			output.append(totally_random());
+		else:
+			output.append(previously());
+		with open("rec", 'a') as f:
+			f.write("%d %d\n" % (len(output[-1][0]), len(output[-1][1])));
+
+	# random.shuffle(output);
+	for i in output:
+		print("%s\n%s" % (i[0], i[1]));
+		print();

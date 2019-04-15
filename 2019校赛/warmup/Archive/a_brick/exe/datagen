@@ -1,0 +1,13 @@
+#!/usr/bin/python
+#coding: utf-8
+
+import random
+
+T = 100;
+print(T);
+for t in range(T):
+	n = random.randrange(1, 100);
+	print(n);
+	for i in range(n):
+		print(random.randint(1, 10000000), end = " ");
+	print();

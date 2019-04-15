@@ -1,0 +1,58 @@
+#!/usr/bin/python
+#coding: utf-8
+
+import random
+from random import randint
+
+choices_raw = "abcdefghijklmnopqrstuvwxyz";
+
+times = 10;
+sigma = 3;
+choices = "";
+
+strings = [];
+strings.append([]);
+for i in choices:
+    strings[0].append(i);
+
+def generate_single(lst):
+    ret = "";
+    length = len(lst);
+    repeat = randint(2, 4);
+    for t in range(repeat):
+        ret += lst[randint(0, length-1)];
+    return ret;
+def generate_next_list(lst):
+    ret = [];
+    nxt_len = len(lst) + 1;
+    for i in range(nxt_len):
+        ret.append(generate_single(lst));
+    return ret;
+def generate_output():
+    ret = strings[-1][randint(0, sigma+times-1)];
+    for i in range(20, 40):
+        ret += random.choice(strings[-5]);
+    return ret;
+
+for x in range(times):
+    strings.append(generate_next_list(strings[-1]));
+T = 1;
+print(T);
+for i in range(T):
+    a = generate_output();
+    b = generate_output();
+    print("%s\n%s" % (a, b));
+    with open("rec", 'w') as f:
+        f.write("%d %d\n" % (len(a), len(b)));
+    print();
+
+
+# maxx = -1;
+# for i in strings:
+#     for j in i:
+#         print(j);
+#         maxx = max(maxx, len(j));
+#     print();
+# print(maxx);
+
+

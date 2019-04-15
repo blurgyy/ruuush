@@ -1,0 +1,20 @@
+#!/usr/bin/python
+
+import random
+
+T = 1;
+print(T);
+for ttt in range(T):
+	n = random.randint(1, 100);
+	m = random.randint(1, 10000);
+	w = 100;
+	print(n, m, w);
+	for i in range(m):
+		u = random.randint(1, n);
+		v = random.randint(1, n);
+		t = random.randint(1, 100000000);
+		print(u, v, t);
+	for i in range(w):
+		q = random.randint(1, 100000000);
+		print(q);
+	print();

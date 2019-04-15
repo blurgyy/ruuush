@@ -1,0 +1,22 @@
+#!/usr/bin/python
+
+import random
+
+T = 5;
+print(T);
+for i in range(T):
+	# n = random.randint(10000000, 100000000);
+	if(i == 0):
+		n = 1;
+		k1 = 98073;
+		k2 = 44098;
+	elif(i == 1):
+		n = 100000000;
+		k1 = random.randint(0, 100000);
+		k2 = random.randint(0, 100000);
+	else:
+		n = random.randint(2, 10000000);
+		k1 = random.randint(0, 100000);
+		k2 = random.randint(0, 100000);
+	print(n, k1, k2);
+	print();

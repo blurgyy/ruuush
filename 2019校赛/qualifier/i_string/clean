@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd exe
+rm -v sol bruteforce kmp exkmp

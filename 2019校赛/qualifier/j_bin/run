@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Compile solution
+if ! test -e exe/sol
+then
+	g++ src/sol.cpp -o exe/sol
+	echo -e "src/sol.cpp compiled\n"
+fi
+
+# Run the program
+cd exe
+echo "Running..."
+./sol < ../data/in.in > ../data/out.out
+echo -e "\nProgram finished\n"

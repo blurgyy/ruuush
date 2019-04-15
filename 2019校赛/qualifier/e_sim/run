@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Compile solution
+if ! test -e exe/sol
+then
+	g++ src/sol.cpp -o exe/sol
+	echo -e "src/sol.cpp compiled"
+fi
+if ! test -e exe/sol3
+then
+	g++ src/sol3.cpp -o exe/sol3
+	echo -e "src/sol3.cpp compiled"
+fi
+
+# Generate input data
+cd exe
+./datagen > ../data/in.in
+echo -e "Input data generated\n"
+
+# Run the program
+
+echo "Running..."
+./sol < ../data/in.in > ../data/out.out
+./sol3 < ../data/in.in > ../data/out2.out
+
+# cnt=1
+# while diff ../data/out.out ../data/out2.out
+# do
+# 	./datagen > ../data/in.in
+# 	./sol < ../data/in.in > ../data/out.out
+# 	./sol3 < ../data/in.in > ../data/out2.out
+# 	echo -e [$cnt]
+# 	cnt=$[$cnt+1]
+# done
+echo -e "\nProgram finished\n"

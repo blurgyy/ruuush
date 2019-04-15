@@ -1,0 +1,222 @@
+#!/usr/bin/python
+
+import random
+import time
+
+def randchar():
+    return random.choice("qwertyuiopasdfghjklzxcvbnm");
+def randdigit():
+    return random.choice("0123456789");
+def randall():
+    return random.choice("qwertyuiopasdfghjklzxcvbnm1234567890");
+
+def belowmaxint():
+    return str(random.randint(0, 2147483647));
+def abovemaxint(length = random.randint(11, 20)):
+    ret = "";
+    for i in range(length):
+        ret += randdigit();
+    return ret;
+def slightlyabovemaxint():
+    return str(2147483648 + random.randint(0, 10));
+def randdiv(div, length = random.randint(1, 5)):
+    ret = "";
+    for i in range(length):
+        ret += div;
+    return ret;
+
+def legit(length, div):
+    ret0 = "";
+    if(random.randint(0, 1) == 0):
+        ret0 += randdiv(div);
+    else:
+        ret0 += belowmaxint();
+    curlen = len(ret0);
+    while(curlen < length):
+        appd = "";
+        if(ret0[curlen-1].isdigit() or random.randint(0, 1) == 0):
+            appd = randdiv(div);
+        else:
+            appd = belowmaxint();
+        curlen += len(appd);
+        ret0 += appd;
+    ret = "";
+    for i in range(length):
+        ret += ret0[i];
+    if(len(ret) != length):
+        with open("?", 'w') as f:
+            f.write("wtf\n");
+    return ret;
+
+def totally_not_legit(length, div):
+    ret0 = "";
+    flag = random.randint(0, 4)
+    if(flag == 0):
+        ret0 += belowmaxint();
+    elif(flag == 1):
+        ret0 += randdiv(div);
+    elif(flag == 2):
+        ret0 += abovemaxint();
+    elif(flag == 3):
+        ret0 += slightlyabovemaxint();
+    elif(flag == 4):
+        ret0 += randall();
+    curlen = len(ret0);
+    while(curlen < length):
+        appd = "";
+        if(ret0[curlen-1] != div):
+            appd = randdiv(div);
+        else:
+            flag = random.randint(0, 4);
+            if(flag == 0):
+                appd = belowmaxint();
+            elif(flag == 1):
+                appd = abovemaxint();
+            elif(flag == 2):
+                appd = slightlyabovemaxint();
+            elif(flag == 3):
+                tot = random.randint(1, 7);
+                for i in range(tot):
+                    appd += randdigit();
+            elif(flag == 4):
+                tot = random.randint(1, 7);
+                for i in range(tot):
+                    appd += randall();
+        curlen += len(appd);
+        ret0 += appd;
+    ret = "";
+    for i in range(length):
+        ret += ret0[i];
+    if(len(ret) != length):
+        with open("?", 'w') as f:
+            f.write("wtf\n");
+    return ret;
+
+def not_legit(length, div, flag = random.randint(0, 4)):
+    ret0 = "";
+    # flag = random.randint(0, 4)
+    if(flag == 0):
+        ret0 += belowmaxint();
+    elif(flag == 1):
+        ret0 += randdiv(div);
+    elif(flag == 2):
+        ret0 += abovemaxint();
+    elif(flag == 3):
+        ret0 += slightlyabovemaxint();
+    elif(flag == 4):
+        ret0 += randall();
+    curlen = len(ret0);
+    while(curlen < length):
+        appd = "";
+        if(ret0[curlen-1] != div):
+            appd = randdiv(div);
+        else:
+            if(flag == 0):
+                appd = belowmaxint();
+            elif(flag == 1):
+                appd = randdiv(div);
+            elif(flag == 2):
+                appd = abovemaxint();
+            elif(flag == 3):
+                appd = slightlyabovemaxint();
+            elif(flag == 4):
+                appd = randall();
+        curlen += len(appd);
+        ret0 += appd;
+    ret = "";
+    for i in range(length):
+        ret += ret0[i];
+    if(len(ret) != length):
+        with open("?", 'w') as f:
+            f.write("wtf\n");
+    return ret;
+
+
+T = 100;
+print(T);
+with open("rec", 'w') as f:
+    f.write("");
+for qwertyuiop in range(T):
+    with open("rec", 'a') as f:
+        if(qwertyuiop == 3):
+            f.write("[%d] not legit\n" % (qwertyuiop + 1));
+            for i in range(random.randint(100, 4058)):
+                print(randchar(), end="");
+            print(" %c\n" % randchar());
+        elif(qwertyuiop == 9):
+            f.write("[%d] legit\n" % (qwertyuiop + 1));
+            print("0a0 a\n");
+        elif(qwertyuiop == 12):
+            f.write("[%d] legit\n" % (qwertyuiop + 1));
+            print("0 g\n");
+        elif(qwertyuiop == 13):
+            f.write("[%d] not legit\n" % (qwertyuiop + 1));
+            tot = random.randint(100, 5687);
+            div0 = randchar();
+            div = div0;
+            while(div == div0):
+                div = randchar()
+            for i in range(tot):
+                print(div, end="");
+            print(" %c\n" % div0);
+        elif(qwertyuiop == 16):
+            f.write("[%d] not legit\n" % (qwertyuiop + 1));
+            print("0e00 e\n");
+        elif(qwertyuiop == 20):
+            f.write("[%d] legit\n" % (qwertyuiop + 1));
+            print("d d\n");
+        elif(qwertyuiop == 23):
+            f.write("[%d] not legit\n" % (qwertyuiop + 1));
+            print("01a0 a\n");
+        elif(qwertyuiop == 28):
+            f.write("[%d] legit\n" % (qwertyuiop + 1));
+            print("0 b\n");
+        elif(qwertyuiop == 32):
+            f.write("[%d] legit\n" % (qwertyuiop + 1));
+            tot = random.randint(100, 5687);
+            div = randchar();
+            for i in range(tot):
+                print(div, end="");
+            print(" %c\n" % div);
+        if(qwertyuiop == 50):
+            f.write("[%d] not legit\n" % (qwertyuiop + 1));
+            div = randchar();
+            print(div, end="");
+            for i in range(random.randint(100, 4058)):
+                print(randchar(), end="");
+            print(" %c\n" % div);
+        if(qwertyuiop == 74):
+            div = randchar();
+            length = random.randint(100, 564);
+            for i in range(length):
+                if(random.randint(0, 5) < 2):
+                    print(div, end="");
+                else:
+                    print(0, end="");
+            print(" %c\n" % div);
+        elif(qwertyuiop < 75):
+            n = 10000;
+            div = randchar();
+            flag = random.randint(0, 5);
+            if(flag <= 2):
+                f.write("[%d] legit\n" % (qwertyuiop + 1));
+                print("%s %s\n" % (legit(n, div), div));
+            elif(flag <= 4):
+                f.write("[%d] not legit\n" % (qwertyuiop + 1));
+                print("%s %s\n" % (not_legit(n, div), div));
+            else:
+                f.write("[%d] totally not legit\n" % (qwertyuiop + 1));
+                print("%s %s\n" % (totally_not_legit(n, div), div));
+        else:
+            n = 200000;
+            div = randchar();
+            flag = random.randint(0, 5);
+            if(flag <= 2):
+                f.write("[%d] legit\n" % (qwertyuiop + 1));
+                print("%s %s\n" % (legit(n, div), div));
+            elif(flag <= 4):
+                f.write("[%d] not legit\n" % (qwertyuiop + 1));
+                print("%s %s\n" % (not_legit(n, div), div));
+            else:
+                f.write("[%d] totally not legit\n" % (qwertyuiop + 1));
+                print("%s %s\n" % (totally_not_legit(n, div), div));

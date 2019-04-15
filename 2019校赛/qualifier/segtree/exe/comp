@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if ! test -e checker
+then
+	echo -e "Compiling checker..."
+	g++ ../src/checker.cpp -o checker
+	echo -e "checker compiled\n"
+fi
+
+if ! test -e sol
+then
+	echo -e "Compiling sol..."
+	g++ ../src/sol.cpp -o sol
+	echo -e "sol compiled\n"
+fi
+
+i=1
+echo -e "test[$i]: Running"
+./datagen > ../data/in.in
+./sol < ../data/in.in > ../data/sol.out
+./checker < ../data/in.in > ../data/checker.out
+i=$[$i+1]
+
+while diff ../data/checker.out ../data/sol.out > ../data/diff
+do
+	echo -e "test[$i]: Running"
+	./datagen > ../data/in.in
+	./sol < ../data/in.in > ../data/sol.out
+	./checker < ../data/in.in > ../data/checker.out
+	i=$[$i+1]
+done
+
+echo -e "Diff found between sol.out checker.out, logged in file \"data/diff\""

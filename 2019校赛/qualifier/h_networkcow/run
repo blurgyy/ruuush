@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Compile solution
+if ! test -e exe/sol
+then
+	g++ src/sol.cpp -o exe/sol
+	echo -e "src/sol.cpp compiled\n"
+fi
+
+
+# Generate input data
+cd exe
+./datagen > ../data/in.in
+echo -e "Input data generated\n"
+
+cd ../data/
+# Run the program
+echo "Running..."
+time ../exe/sol < in.in > out.out
+echo -e "\nProgram finished\n"

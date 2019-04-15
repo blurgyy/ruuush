@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Compile solution
+if ! test -e exe/sol
+then
+	g++ src/sol.cpp -o exe/sol
+	echo -e "src/sol.cpp compiled"
+fi
+if ! test -e exe/bruteforce
+then
+	g++ src/bruteforce.cpp -o exe/bruteforce
+	echo "src/bruteforce.cpp compiled"
+fi
+
+# Generate input data
+exe/datagen > data/in.in
+echo -e "Input data generated\n"
+
+# Run the program
+echo "Running..."
+cd data/
+../exe/sol < in.in > sol.out
+../exe/bruteforce < in.in > bruteforce.out
+
+cnt=1
+while diff sol.out bruteforce.out
+do
+	time ../exe/sol < in.in > sol.out
+	echo -e "^ sol"
+	time ../exe/bruteforce < in.in > bruteforce.out
+	echo -e "^ bruteforce\n\n"
+	echo [$cnt]
+	cnt=$[$cnt+1]
+done
+echo -e "\nProgram finished\n"
