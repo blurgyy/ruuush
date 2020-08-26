@@ -1,18 +1,18 @@
+#include <algorithm>
 #include <cstdio>
 #include <cstring>
-#include <algorithm>
 typedef long long ll;
-const int maxn = 100010;
+const int         maxn = 100010;
 
 char buf[maxn];
 int  s[maxn];
 bool invalid[maxn];
 int  nlen;
-ll ans;
+ll   ans;
 
 ll calc(int x) {
     ll ret = 1;
-    for (int i = x; i < x + 13; ++ i) {
+    for (int i = x; i < x + 13; ++i) {
         ret *= 1ll * s[i];
     }
     return ret;
@@ -21,7 +21,7 @@ ll calc(int x) {
 void init() {
     memset(invalid, false, sizeof(invalid));
     nlen = 0;
-    ans = -1;
+    ans  = -1;
 }
 
 int main() {
@@ -44,8 +44,8 @@ int main() {
         }
     }
 
-    for(int i = 0; i < nlen; ++ i) {
-        if (! invalid[i]) {
+    for (int i = 0; i < nlen; ++i) {
+        if (!invalid[i]) {
             ans = std::max(ans, calc(i));
         }
     }

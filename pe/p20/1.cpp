@@ -56,7 +56,7 @@ vector<int> pow(int const bot, int const top) {
         ret = base;
     } else {
         int mid = top / 2;
-        ret = mul(pow(bot, mid), pow(bot, top - mid));
+        ret     = mul(pow(bot, mid), pow(bot, top - mid));
     }
     return ret;
 }
@@ -66,7 +66,7 @@ vector<int> fact(int const value) {
     if (value <= 1) {
         return ret;
     }
-    for (int i = 1; i <= value; ++ i) {
+    for (int i = 1; i <= value; ++i) {
         ret = mul(ret, store(i));
     }
     return ret;
@@ -98,7 +98,7 @@ void solve() {
         vector<int> ans = fact(x);
         // output(ans);
         int sum = 0;
-        for (int i = 0; i < ans.size(); ++ i) {
+        for (int i = 0; i < ans.size(); ++i) {
             sum += ans[i];
         }
         printf("sum is %d\n", sum);

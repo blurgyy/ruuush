@@ -5,8 +5,8 @@ typedef long long ll;
 const size_t      size = 20;
 const size_t      maxn = size + 10;
 // So there are in fact 4 directions, including the anti-diagonal direction.
-const int         dx[] = {1, 1, 0, -1};
-const int         dy[] = {0, 1, 1, 1};
+const int dx[] = {1, 1, 0, -1};
+const int dy[] = {0, 1, 1, 1};
 
 int a[maxn][maxn];
 

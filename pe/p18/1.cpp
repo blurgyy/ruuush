@@ -23,7 +23,7 @@ int main() {
         }
     }
     int ans = -1;
-    for (int i = 1; i <= rows; ++ i) {
+    for (int i = 1; i <= rows; ++i) {
         ans = max(ans, sum[rows][i]);
     }
     printf("ans is %d\n", ans);

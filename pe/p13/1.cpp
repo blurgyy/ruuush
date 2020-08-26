@@ -46,11 +46,11 @@ int main() {
         ++topdigit;
     }
 
-    for (int i = topdigit; i >= 0; -- i) {
+    for (int i = topdigit; i >= 0; --i) {
         printf("%d", ans[i]);
     }
     printf("\n");
-    for (int i = topdigit; i > topdigit-10; -- i) {
+    for (int i = topdigit; i > topdigit - 10; --i) {
         printf("%d", ans[i]);
     }
     printf("\n");

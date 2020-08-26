@@ -45,7 +45,7 @@ int main() {
     int tenmiscs = ninetynine; // sum(1..99)
     for (int i = 1; i <= 9; ++i) {
         tenmiscs += ninetynine + 99 * (strlen(ones[i]) + strlen("hundred") +
-                    strlen("and"));
+                                       strlen("and"));
     }
 
     // 100 + 200 + ... + 900 + 1000

@@ -1,6 +1,6 @@
 // This construction method does not solve problem 9.  See ./bf.cpp instead.
-#include <cstdio>
 #include <cassert>
+#include <cstdio>
 
 // Construct Pythagorean triplets:
 // a = 2*x*x + 2*x
@@ -17,7 +17,7 @@ int main() {
         if (a > 1000) {
             break;
         }
-        assert(a*a + b*b == c*c);
+        assert(a * a + b * b == c * c);
         // if (a + b + c == 1000) {
         printf("%d %d %d ", a, b, c);
         printf("prod is %d\n", a * b * c);

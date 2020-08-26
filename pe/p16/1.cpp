@@ -9,7 +9,7 @@ int ans[maxn];
 int a[maxn], b[maxn];
 
 void output(int *arr, int len) {
-    for (int i = len-1; i >= 0; -- i) {
+    for (int i = len - 1; i >= 0; --i) {
         printf("%d", arr[i]);
     }
     printf("\n");
@@ -136,7 +136,7 @@ int main() {
     store(2, lhs);
     store(1, rhs);
     printf("begins\n");
-    for (int i = 0; i < 10000; ++ i) {
+    for (int i = 0; i < 10000; ++i) {
         // printf("i = %d\n", i);
         lenr = mul(lhs, lenl, rhs, lenr, ans);
         store(ans, rhs, lenr);
@@ -145,7 +145,7 @@ int main() {
     printf("ends\n");
     // output(ans, lenr);
     int sum = 0;
-    for (int i = 0; i < lenr; ++ i) {
+    for (int i = 0; i < lenr; ++i) {
         sum += ans[i];
     }
     printf("sum is %d\n", sum);

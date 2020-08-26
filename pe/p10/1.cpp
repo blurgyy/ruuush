@@ -1,5 +1,5 @@
-#include <cstdio>
 #include <cmath>
+#include <cstdio>
 typedef long long ll;
 
 bool check(ll x) {
@@ -24,7 +24,7 @@ bool check(ll x) {
 int main() {
     ll ans = 0;
     ll top = 2000000;
-    for (int i = 2; i < top; ++ i) {
+    for (int i = 2; i < top; ++i) {
         if (check(i)) {
             ans += i;
         }
